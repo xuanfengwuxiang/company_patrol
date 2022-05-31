@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="areaId"
+            type="String" />
+
+        <variable
+            name="activity"
+            type="com.mingshu.vm.patrol.area.activity.AreaReportActivity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".device.DeviceReportActivity">
+
+        <!-- 标题-->
+        <TextView
+            android:id="@+id/tv_tittle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:background="#313131"
+            android:gravity="center"
+            android:text="@string/area_patrol_commit"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_device"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/patrol_question1"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tittle" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_safe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_device" />
+
+        <TextView
+            android:id="@+id/tv_oiling"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/patrol_question2"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_safe" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_temp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_oiling" />
+
+        <TextView
+            android:id="@+id/tv_health"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/patrol_question3"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_temp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_health"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_health" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:onClick="@{activity::onClick}"
+            android:id="@+id/bt_commit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:textSize="16sp"
+            android:backgroundTint="@color/baseThemeColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/color_transparent"
+            android:onClick="@{activity::onClick}"
+            android:text="返回"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+            app:layout_constraintStart_toEndOf="@+id/iv_back"
+            app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_back2"
+            android:tint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_tittle"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_tittle"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

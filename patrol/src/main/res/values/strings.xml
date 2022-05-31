@@ -1,0 +1,42 @@
+<resources>
+
+    <string name="patrol_app_name">企业巡检</string>
+
+    <string name="daily_patrol">日常巡检</string>
+
+    <string name="process_desc">请按照以下流程进行巡检</string>
+
+    <string name="important_part">重要仪器巡检</string>
+
+    <string name="important_area">重要区域巡检</string>
+
+    <string name="area_stand">区域规范</string>
+
+    <string name="device_stand">仪器指标</string>
+
+    <string name="start_patrol">开始巡检</string>
+
+    <string name="test">设备 规范条目：\n 1、条目1 \n 2、条目2 \n 3、条目3</string>
+
+    <string name="test1">设备 安全指标：\n 1、条目1 \n 2、条目2 \n 3、条目3</string>
+
+
+    <string name="device_name">设备名称</string>
+
+    <string name="device_patrol_commit">仪器巡检记录提交</string>
+    <string name="area_patrol_commit">区域巡检提交</string>
+
+    <string name="patrol_question1">安全是否合格?</string>
+    <string name="patrol_question2">室温多少?</string>
+    <string name="patrol_question3">卫生是否合格?</string>
+
+    <string name="device_patrol_question1">设备显示的值?</string>
+    <string name="device_patrol_question2">设备是否损坏?</string>
+    <string name="device_patrol_question3">设备位置是否正确?</string>
+
+    <string name="submit">提交</string>
+    <string name="take_photo">拍照</string>
+
+    <string name="device_error_and_call">仪器异常，紧急呼叫</string>
+
+</resources>
