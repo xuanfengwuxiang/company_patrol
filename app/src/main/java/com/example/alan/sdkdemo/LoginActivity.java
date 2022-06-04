@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.alan.sdkdemo.contact.SPUtil;
-import com.example.alan.sdkdemo.databinding.ActivityLoginBinding;
+import com.example.alan.sdkdemo.databinding.ActivityLogin2Binding;
 import com.vcrtc.registration.VCRegistrationUtil;
 import com.vcrtc.registration.VCService;
 
@@ -28,7 +28,7 @@ import static com.vcrtc.registration.VCService.VC_ACTION;
  */
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ActivityLoginBinding binding;
+    ActivityLogin2Binding binding;
     LoginReceiver receiver = new LoginReceiver();
     AudioManager am;
 
@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        binding = ActivityLogin2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         IntentFilter filter = new IntentFilter(VC_ACTION);
         registerReceiver(receiver, filter);

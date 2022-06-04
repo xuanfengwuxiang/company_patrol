@@ -2,6 +2,10 @@
 
     <string name="patrol_app_name">企业巡检</string>
 
+    <string name="user_name">用户名</string>
+
+    <string name="password">密码</string>
+
     <string name="daily_patrol">日常巡检</string>
 
     <string name="process_desc">请按照以下流程进行巡检</string>
