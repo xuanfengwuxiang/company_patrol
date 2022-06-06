@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:theme,android:label"
+        android:usesCleartextTraffic="true"
         android:largeHeap="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".contact.ContactActivity"
@@ -21,7 +22,10 @@
         <activity android:name=".MainActivity"
             android:theme="@style/AppStyle"
             android:exported="true">
-
+            <intent-filter>
+                <action android:name="com.random.main"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.ZJConferenceActivity"

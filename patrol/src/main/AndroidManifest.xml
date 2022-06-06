@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mingshu.vm.patrol">
 
-    <application android:theme="@style/AppTheme">
+    <application
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".login.LoginActivity"
             android:exported="true">

@@ -6,6 +6,15 @@
 
     <string name="password">密码</string>
 
+    <string name="please_input_username">请输入用户名</string>
+
+    <string name="please_input_password">请输入密码</string>
+
+    <string name="demo_action">com.random.main</string>
+
+    <string name="login_success">登录成功</string>
+
+
     <string name="daily_patrol">日常巡检</string>
 
     <string name="process_desc">请按照以下流程进行巡检</string>

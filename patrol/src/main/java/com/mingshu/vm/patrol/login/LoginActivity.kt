@@ -1,5 +1,6 @@
 package com.mingshu.vm.patrol.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.mingshu.vm.patrol.R
@@ -22,7 +23,8 @@ class LoginActivity : BaseActivity<LoginPresenter, ActivityLoginBinding>(), View
     }
 
     override fun initData(bundle: Bundle?) {
-        // do nothing
+        mBinding.activity = this
+
     }
 
     override fun getStatusBarColorResId(): Int {
@@ -30,7 +32,8 @@ class LoginActivity : BaseActivity<LoginPresenter, ActivityLoginBinding>(), View
     }
 
     override fun onSubmitSuccess() {
-        TODO("Not yet implemented")
+        finish()
+        startActivity(Intent(resources.getString(R.string.demo_action)))
     }
 
     override fun onSubmitError(msg: String?) {
@@ -38,7 +41,7 @@ class LoginActivity : BaseActivity<LoginPresenter, ActivityLoginBinding>(), View
     }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        if (v?.id==R.id.bt_commit)mPresenter.login(mBinding)
     }
 
 }
