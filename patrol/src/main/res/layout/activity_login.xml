@@ -10,6 +10,13 @@
             name="activity"
             type="com.mingshu.vm.patrol.login.LoginActivity" />
 
+        <variable
+            name="user_name"
+            type="String" />
+
+        <variable
+            name="password"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,6 +35,7 @@
             app:layout_constraintBottom_toTopOf="@id/et_password"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:text="@{user_name}"
             app:layout_constraintVertical_chainStyle="packed" />
 
 
@@ -38,6 +46,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:hint="@string/password"
+            android:text="@{password}"
             app:layout_constraintBottom_toTopOf="@id/bt_commit"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_user" />

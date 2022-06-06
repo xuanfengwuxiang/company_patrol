@@ -48,8 +48,10 @@ class LoginPresenter : BasePresenter<LoginView?> {
         request.username = binding.etUser.text.toString()
         request.password = binding.etPassword.text.toString()
         request.type = "app"
+        (mView as LoginView).showProgress()
         HttpManager.getInstance().postJson(HttpConstant.BASE_URL + HttpConstant.LOGIN, request, object : HttpResponse<JsonObject?> {
             override fun onSuccess(jsonObject: JsonObject?) {
+                (mView as LoginView).hideProgress()
                 val loginResponse = Gson().fromJson(jsonObject, LoginResponse::class.java)
                 if (loginResponse != null && loginResponse.code != 200) {
                     ToastUtil.showToast(mView as Context, loginResponse.msg)
@@ -62,7 +64,9 @@ class LoginPresenter : BasePresenter<LoginView?> {
                 ToastUtil.showToast(mView as Context,(mView as Context).resources.getString(R.string.login_success))
             }
 
-            override fun onError(e: Throwable) {}
+            override fun onError(e: Throwable) {
+                (mView as LoginView).hideProgress()
+            }
             override fun onComplete() {}
         })
     }
