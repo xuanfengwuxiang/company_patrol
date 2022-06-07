@@ -3,6 +3,7 @@ package com.mingshu.vm.patrol.login
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import com.mingshu.vm.patrol.PatrolMainActivity
 import com.mingshu.vm.patrol.R
 import com.mingshu.vm.patrol.constant.SpConstant
 import com.mingshu.vm.patrol.databinding.ActivityLoginBinding
@@ -36,7 +37,8 @@ class LoginActivity : BaseActivity<LoginPresenter, ActivityLoginBinding>(), View
 
     override fun onSubmitSuccess() {
         finish()
-        startActivity(Intent(resources.getString(R.string.demo_action)))
+//        startActivity(Intent(resources.getString(R.string.demo_action)))
+        startActivity(Intent(this,PatrolMainActivity::class.java))
     }
 
     override fun onSubmitError(msg: String?) {
