@@ -10,6 +10,7 @@ import com.mingshu.vm.patrol.databinding.ActivityDeviceInfoBinding;
 import com.mingshu.vm.patrol.device.presenter.DeviceStandardPresenter;
 import com.mingshu.vm.patrol.device.view.DeviceStandardView;
 import com.mingshu.vm.patrol.http.response.AreaDeviceStandard;
+import com.mingshu.vm.patrol.login.PatrolLoginActivity;
 import com.xuanfeng.xflibrary.mvp.BaseActivity;
 
 import java.util.List;
@@ -48,6 +49,8 @@ public class DeviceInfoActivity extends BaseActivity<DeviceStandardPresenter, Ac
         int id = v.getId();
         if (id == R.id.tv_start_patrol) {
             startActivity(new Intent(this, DeviceReportActivity.class));
+        }else if(id == R.id.bt_urgency_call){
+            startActivity(new Intent(getResources().getString(R.string.demo_action)));
         }
     }
 
