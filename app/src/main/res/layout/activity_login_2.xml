@@ -20,7 +20,14 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="视频账号登录中..."/>
+
     <ScrollView
+        android:visibility="invisible"
         android:id="@+id/login_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.mingshu.vm.patrol.R
 import com.mingshu.vm.patrol.databinding.FragmentMineBinding
-import com.mingshu.vm.patrol.login.LoginActivity
+import com.mingshu.vm.patrol.login.PatrolLoginActivity
 import com.mingshu.vm.patrol.mine.presenter.MinePresenter
 import com.mingshu.vm.patrol.mine.view.MineView
 import com.xuanfeng.xflibrary.mvp.BaseFragment
@@ -40,7 +40,7 @@ class MineFragment : BaseFragment<MinePresenter, FragmentMineBinding>(), View.On
             dialog.setData(list) {
                 if (it == 0) {
                     activity?.finish();
-                    startActivity(Intent(context, LoginActivity::class.java))
+                    startActivity(Intent(context, PatrolLoginActivity::class.java))
                 }
             }
             dialog.show()

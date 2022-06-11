@@ -12,7 +12,9 @@
 
     <string name="demo_action">com.random.main</string>
 
-    <string name="login_success">登录成功</string>
+    <string name="demo_login_action">com.random.login</string>
+
+    <string name="login_success">巡检账号登录成功</string>
 
 
     <string name="daily_patrol">日常巡检</string>

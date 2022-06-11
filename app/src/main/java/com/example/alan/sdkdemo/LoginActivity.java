@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.example.alan.sdkdemo.contact.SPUtil;
 import com.example.alan.sdkdemo.databinding.ActivityLogin2Binding;
+import com.mingshu.vm.patrol.PatrolMainActivity;
+import com.mingshu.vm.patrol.login.PatrolLoginActivity;
 import com.vcrtc.registration.VCRegistrationUtil;
 import com.vcrtc.registration.VCService;
 
@@ -43,24 +45,32 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         binding.btnLogin.setOnClickListener(this);
         binding.btnLogout.setOnClickListener(this);
+        doLogin();
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_login:
-                VCRegistrationUtil.logout(this);
-                SPUtil.Companion.instance(getApplicationContext()).setLogin(false);
-                SPUtil.Companion.instance(getApplicationContext()).setModel("");
-                SPUtil.Companion.instance(getApplicationContext()).setSessionId("");
-                SPUtil.Companion.instance(getApplicationContext()).setCompanyId("");
-                VCRegistrationUtil.login(this,"", binding.email.getText().toString(), binding.password.getText().toString());
+                doLogin();
                 break;
             case R.id.btn_logout:
                 VCRegistrationUtil.logout(this);
                 break;
             default:
         }
+    }
+
+    public void doLogin(){
+        binding.loginProgress.setVisibility(View.VISIBLE);
+        VCRegistrationUtil.logout(this);
+        SPUtil.Companion.instance(getApplicationContext()).setLogin(false);
+        SPUtil.Companion.instance(getApplicationContext()).setModel("");
+        SPUtil.Companion.instance(getApplicationContext()).setSessionId("");
+        SPUtil.Companion.instance(getApplicationContext()).setCompanyId("");
+        String userName = getIntent().getStringExtra(PatrolLoginActivity.Companion.getVIDEO_USER_NAME());
+        String password = getIntent().getStringExtra(PatrolLoginActivity.Companion.getVIDEO_PASSWORD());
+        VCRegistrationUtil.login(this,"", userName, password);
     }
 
     @Override
@@ -75,8 +85,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             String message = intent.getStringExtra(VCService.MSG);
             switch (message) {
                 case VCService.MSG_LOGIN_SUCCESS:
-                    Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "视频账号登录成功", Toast.LENGTH_SHORT).show();
                     finish();
+                    startActivity(new Intent(LoginActivity.this, PatrolMainActivity.class));
                     break;
                 case VCService.MSG_LOGIN_FAILED:
                     Toast.makeText(LoginActivity.this, "登录失败", Toast.LENGTH_SHORT).show();

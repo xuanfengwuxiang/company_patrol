@@ -6,7 +6,7 @@ import com.google.gson.JsonObject
 import com.mingshu.vm.patrol.R
 import com.mingshu.vm.patrol.constant.HttpConstant
 import com.mingshu.vm.patrol.constant.SpConstant
-import com.mingshu.vm.patrol.databinding.ActivityLoginBinding
+import com.mingshu.vm.patrol.databinding.ActivityPatrolLoginBinding
 import com.mingshu.vm.patrol.http.request.LoginRequest
 import com.mingshu.vm.patrol.http.response.LoginResponse
 import com.mingshu.vm.patrol.login.view.LoginView
@@ -34,7 +34,7 @@ class LoginPresenter : BasePresenter<LoginView?> {
      * 登录接口
      * admin admin123 app
      */
-    fun login(binding: ActivityLoginBinding) {
+    fun login(binding: ActivityPatrolLoginBinding) {
         if (StringUtils.isEmpty(binding.etUser.text.toString())) {
             ToastUtil.showToast(mView as Context?, (mView as Context).resources.getString(R.string.please_input_username))
             return

@@ -9,7 +9,7 @@
             android:name=".PatrolMainActivity"
             android:exported="false" />
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".login.PatrolLoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

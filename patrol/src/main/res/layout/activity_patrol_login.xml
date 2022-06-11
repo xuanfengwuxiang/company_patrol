@@ -8,7 +8,7 @@
 
         <variable
             name="activity"
-            type="com.mingshu.vm.patrol.login.LoginActivity" />
+            type="com.mingshu.vm.patrol.login.PatrolLoginActivity" />
 
         <variable
             name="user_name"
