@@ -29,6 +29,7 @@ import com.example.alan.sdkdemo.util.CheckUtil;
 import com.vcrtc.VCRTCPreferences;
 import com.vcrtc.callbacks.CallBack;
 import com.vcrtc.entities.Call;
+import com.vcrtc.registration.VCRegistrationUtil;
 import com.vcrtc.utils.SystemUtil;
 import com.vcrtc.utils.VCUtil;
 
@@ -87,6 +88,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.btn_logout:
+                VCRegistrationUtil.logout(this);
+                break;
             case R.id.btn_connect:
                 checkUrl(binding.tvAddress.getText().toString());
                 break;

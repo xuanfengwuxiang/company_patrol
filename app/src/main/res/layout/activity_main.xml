@@ -106,4 +106,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btn_logout"
+        android:text="退出视频登录"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
