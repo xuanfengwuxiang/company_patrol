@@ -7,6 +7,7 @@ import com.mingshu.vm.patrol.R
 import com.mingshu.vm.patrol.constant.SpConstant
 import com.mingshu.vm.patrol.databinding.ActivityPatrolLoginBinding
 import com.mingshu.vm.patrol.databinding.ActivityPatrolMainBinding
+import com.mingshu.vm.patrol.http.response.UserInfoResponse
 import com.mingshu.vm.patrol.login.presenter.LoginPresenter
 import com.mingshu.vm.patrol.login.view.LoginView
 import com.xuanfeng.xflibrary.mvp.BaseActivity
@@ -40,15 +41,19 @@ class PatrolLoginActivity : BaseActivity<LoginPresenter,ActivityPatrolLoginBindi
     }
 
     override fun onSubmitSuccess() {
-        finish()
-        val intent = Intent(resources.getString(R.string.demo_login_action))
-        intent.putExtra(VIDEO_USER_NAME,"qk@51vmr.com")
-        intent.putExtra(VIDEO_PASSWORD,"1234")
-        startActivity(intent)
+        mPresenter.getUserInfo(mBinding.userName)
     }
 
     override fun onSubmitError(msg: String?) {
-        TODO("Not yet implemented")
+        // do nothing
+    }
+
+    override fun onGetUserInfo(userInfo: UserInfoResponse.UserInfo?) {
+        val intent = Intent(resources.getString(R.string.demo_login_action))
+        intent.putExtra(VIDEO_USER_NAME,userInfo?.videoUserName)
+        intent.putExtra(VIDEO_PASSWORD,userInfo?.videoPassword)
+        startActivity(intent)
+        finish()
     }
 
     override fun onClick(v: View?) {

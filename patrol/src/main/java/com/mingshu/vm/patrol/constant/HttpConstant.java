@@ -21,4 +21,7 @@ public class HttpConstant {
 
     // 区域/设备 规范查询
     public static final String AREA_DEVICE_STANDARD = "/qrcode/querystandard";
+
+    // 查询用户信息
+    public static final String QUERY_USER_INFO = "/system/user/select";
 }
