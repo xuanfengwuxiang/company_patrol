@@ -41,7 +41,7 @@ class PatrolLoginActivity : BaseActivity<LoginPresenter,ActivityPatrolLoginBindi
     }
 
     override fun onSubmitSuccess() {
-        mPresenter.getUserInfo(mBinding.userName)
+        mPresenter.getUserInfo(mBinding.etUser.text.toString())
     }
 
     override fun onSubmitError(msg: String?) {
